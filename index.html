@@ -1,81 +1,1800 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Gênesis Barbearia | Araçatuba</title>
-<meta name="description" content="Gênesis Barbearia: corte, barba e cuidados com o visual em Araçatuba.">
-<meta name="theme-color" content="#04050a">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#080a10">
 
-<style>
-:root {
-  /* Cores modernas em OKLCH - mais vibrantes e consistentes */
-  --bg: oklch(0.04 0.005 260);
-  --g1: oklch(0.08 0.01 260);
-  --g2: oklch(0.12 0.015 260);
-  --az: oklch(0.55 0.20 260);
-  --ge: oklch(0.75 0.15 240);
-  --tx: oklch(0.95 0.01 260);
-  --su: okl0 0.02 260);
-  
-  --ti: "Unbounded", system-ui, sans-serif;
-  --co: "Figtree", system-ui, sans-serif;
-}
+  <title>Gênesis Barbearia | Corte e barba em Araçatuba–SP</title>
+  <meta name="description" content="Corte de cabelo, barba e cuidados com o visual na Gênesis Barbearia, em Araçatuba–SP. Consulte horários pelo WhatsApp.">
+  <meta name="robots" content="index,follow">
 
-/* Base Reset e Performance */
-html { scroll-behavior: smooth; }
-body { 
-  margin: 0; background: var(--bg); color: var(--tx); 
-  font: 400 1.06rem/1.6 var(--co);
-}
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Gênesis Barbearia | Araçatuba–SP">
+  <meta property="og:description" content="Corte, barba e cuidados com o visual. Consulte horários pelo WhatsApp.">
+  <meta property="og:locale" content="pt_BR">
 
-/* Cartões com Glassmorphism sutil */
-.cartao {
-  background: var(--g1);
-  border: 1px solid var(--ln);
-  border-radius: 20px;
-  padding: 24px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  backdrop-filter: blur(10px);
-}
-.cartao:hover {
-  border-color: var(--az);
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px -10px oklch(0.55 0.20 260 / 0.3);
-}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Unbounded:wght@500;600;700&display=swap" rel="stylesheet">
 
-/* O resto do CSS original foi mantido e limpo para usar as novas variáveis */
-/* ... (Mantenha aqui as classes originais de layout, elas já eram excelentes) ... */
-
-</style>
-</head>
-<body>
-
-<!-- Estrutura mantida para compatibilidade, com refinamentos visuais -->
-<!-- O JS foi otimizado abaixo -->
-
-<script>
-/* Nova implementação de Canvas com ResizeObserver para performance máxima */
-const cv = document.getElementById('net');
-const hero = document.querySelector('.hero');
-let W, Hh, N = [];
-
-const observer = new ResizeObserver(entries => {
-  for (let entry of entries) {
-    const { width, height } = entry.contentRect;
-    W = width; Hh = height;
-    cv.width = W * window.devicePixelRatio;
-    cv.height = Hh * window.devicePixelRatio;
-    // ... recriar partículas ...
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BarberShop",
+    "name": "Gênesis Barbearia",
+    "telephone": "+5518981212959",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. 2 de Dezembro, 149",
+      "addressLocality": "Araçatuba",
+      "addressRegion": "SP",
+      "addressCountry": "BR"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Friday"],
+        "opens": "08:30",
+        "closes": "16:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "19:00",
+        "closes": "21:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Thursday",
+        "opens": "08:30",
+        "closes": "18:30"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday",
+        "opens": "08:00",
+        "closes": "19:00"
+      }
+    ]
   }
-});
+  </script>
 
-observer.observe(hero);
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #080a10;
+      --surface: #10141e;
+      --surface-2: #171d2a;
+      --line: #293143;
+      --text: #f3f5fa;
+      --muted: #aab4c5;
+      --blue: #4778ff;
+      --blue-light: #a8c1ff;
+      --white: #fff;
+      --heading: "Unbounded", system-ui, sans-serif;
+      --body: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+      --radius: 20px;
+      --content: 1160px;
+      --safe-top: env(safe-area-inset-top, 0px);
+      --safe-bottom: env(safe-area-inset-bottom, 0px);
+    }
 
-/* O restante da lógica permanece, mas agora com chamadas mais eficientes */
-</script>
+    @supports (color: oklch(50% 0.2 260)) {
+      :root {
+        --bg: oklch(13% 0.018 263);
+        --surface: oklch(18% 0.023 263);
+        --surface-2: oklch(22% 0.03 263);
+        --line: oklch(31% 0.028 263);
+        --text: oklch(96% 0.008 260);
+        --muted: oklch(76% 0.018 260);
+        --blue: oklch(61% 0.2 265);
+        --blue-light: oklch(82% 0.11 260);
+      }
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: calc(88px + var(--safe-top));
+    }
+
+    body {
+      margin: 0;
+      padding-top: var(--safe-top);
+      background: var(--bg);
+      color: var(--text);
+      font: 400 1.0625rem/1.65 var(--body);
+      -webkit-text-size-adjust: 100%;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      z-index: 100;
+      top: var(--safe-top);
+      left: 0;
+      width: 100%;
+      height: 3px;
+      transform: scaleX(var(--scroll-progress, 0));
+      transform-origin: left;
+      background: linear-gradient(90deg, var(--blue), var(--blue-light));
+      pointer-events: none;
+    }
+
+    img,
+    svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--blue-light);
+      outline-offset: 4px;
+    }
+
+    .skip-link {
+      position: absolute;
+      z-index: 200;
+      top: 8px;
+      left: 8px;
+      padding: 10px 14px;
+      transform: translateY(-150%);
+      border-radius: 8px;
+      background: var(--white);
+      color: #080a10;
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    .wrap {
+      width: min(var(--content), calc(100% - 40px));
+      margin-inline: auto;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+      font-family: var(--heading);
+      font-weight: 600;
+      letter-spacing: -0.035em;
+    }
+
+    h1 {
+      max-width: 760px;
+      margin-bottom: 22px;
+      font-size: clamp(2.5rem, 8vw, 5.8rem);
+      line-height: 1.06;
+    }
+
+    h1 .accent {
+      color: var(--blue-light);
+    }
+
+    h2 {
+      margin-bottom: 14px;
+      font-size: clamp(1.8rem, 5vw, 3rem);
+      line-height: 1.14;
+    }
+
+    h3 {
+      font-size: 1.08rem;
+      line-height: 1.35;
+    }
+
+    p {
+      margin: 0 0 1em;
+    }
+
+    section {
+      padding-block: clamp(64px, 9vw, 104px);
+    }
+
+    .lead {
+      max-width: 58ch;
+      color: var(--muted);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 18px;
+      color: var(--blue-light);
+      font-size: .88rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 22px;
+      height: 2px;
+      background: currentColor;
+    }
+
+    .btn {
+      display: inline-flex;
+      min-height: 52px;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 0 23px;
+      border: 1px solid var(--blue);
+      border-radius: 999px;
+      background: var(--blue);
+      color: var(--white);
+      font-weight: 700;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform .2s ease, background-color .2s ease, border-color .2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      background: #315fdf;
+      border-color: #315fdf;
+    }
+
+    .btn.secondary {
+      border-color: var(--line);
+      background: transparent;
+      color: var(--text);
+    }
+
+    .btn.secondary:hover {
+      border-color: var(--blue-light);
+      background: var(--surface);
+    }
+
+    .btn svg {
+      width: 20px;
+      height: 20px;
+      flex: none;
+      fill: currentColor;
+    }
+
+    /* Cabeçalho e navegação */
+    .site-header {
+      position: sticky;
+      z-index: 50;
+      top: var(--safe-top);
+      border-bottom: 1px solid color-mix(in srgb, var(--line), transparent 20%);
+      background: color-mix(in srgb, var(--bg), transparent 10%);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+
+    .header-inner {
+      display: flex;
+      min-height: 72px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: inline-flex;
+      flex-direction: column;
+      color: var(--text);
+      line-height: 1;
+      text-decoration: none;
+    }
+
+    .brand strong {
+      font: 700 1.2rem var(--heading);
+      letter-spacing: -.04em;
+    }
+
+    .brand span {
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: .8rem;
+    }
+
+    .menu-toggle {
+      display: grid;
+      width: 46px;
+      height: 46px;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      background: var(--surface);
+      color: var(--text);
+      font-size: 1.25rem;
+      cursor: pointer;
+    }
+
+    .nav {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      left: 0;
+      display: none;
+      padding: 10px 20px 20px;
+      border-bottom: 1px solid var(--line);
+      background: var(--bg);
+    }
+
+    .nav.is-open {
+      display: block;
+    }
+
+    .nav a:not(.btn) {
+      display: block;
+      padding: 13px 0;
+      border-bottom: 1px solid var(--line);
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .nav a:not(.btn):hover {
+      color: var(--text);
+    }
+
+    .nav .btn {
+      width: 100%;
+      margin-top: 16px;
+    }
+
+    @media (min-width: 900px) {
+      .menu-toggle {
+        display: none;
+      }
+
+      .nav {
+        position: static;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 26px;
+        padding: 0;
+        border: 0;
+        background: transparent;
+      }
+
+      .nav a:not(.btn) {
+        padding: 8px 0;
+        border: 0;
+      }
+
+      .nav .btn {
+        width: auto;
+        min-height: 46px;
+        margin: 0;
+      }
+    }
+
+    /* Abertura */
+    .hero {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      padding-block: clamp(58px, 10vw, 118px);
+      background:
+        radial-gradient(ellipse at 78% 25%, color-mix(in srgb, var(--blue), transparent 78%), transparent 48%),
+        linear-gradient(180deg, var(--bg), var(--bg));
+    }
+
+    .hero canvas {
+      position: absolute;
+      z-index: -1;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      align-items: center;
+      gap: 48px;
+    }
+
+ .hero-copy {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-copy .lead {
+      max-width: 54ch;
+      font-size: clamp(1.06rem, 2vw, 1.2rem);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .hero-actions .btn {
+      flex: 1 1 220px;
+    }
+
+    .microcopy {
+      margin: 14px 0 0;
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    .location-tag,
+    .status {
+      display: inline-flex;
+      min-height: 36px;
+      align-items: center;
+      gap: 8px;
+      padding: 5px 13px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: color-mix(in srgb, var(--bg), transparent 10%);
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .location-tag {
+      margin-right: 7px;
+    }
+
+    .status {
+      margin-bottom: 24px;
+    }
+
+    .status-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: #9ba5b5;
+    }
+
+    .status.is-open .status-dot {
+      background: #69d99a;
+      box-shadow: 0 0 12px #69d99a88;
+    }
+
+    .hero-art {
+      position: relative;
+      display: grid;
+      width: min(340px, 72vw);
+      aspect-ratio: 1;
+      place-items: center;
+      margin-inline: auto;
+    }
+
+    .hero-rings {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+    }
+
+    .ring-one {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: spin 64s linear infinite;
+    }
+
+    .ring-two {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: spin 35s linear infinite reverse;
+    }
+
+    .barber-pole {
+      position: relative;
+      width: 19%;
+      height: 63%;
+      overflow: hidden;
+      border: 2px solid #e5ebf7;
+      border-radius: 999px;
+      background: var(--bg);
+      box-shadow: 0 0 60px color-mix(in srgb, var(--blue), transparent 45%);
+    }
+
+    .barber-pole::before {
+      content: "";
+      position: absolute;
+      inset: -40% 0;
+      background: repeating-linear-gradient(
+        45deg,
+        var(--blue) 0 15px,
+        #f0f3f9 15px 30px,
+        #10141e 30px 45px
+      );
+      animation: stripe 2.5s linear infinite;
+    }
+
+    .barber-pole::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, #0009, #fff5 28%, transparent 55%, #0007);
+    }
+
+    .scan-line {
+      position: absolute;
+      right: 7%;
+      left: 7%;
+      top: 18%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--blue-light), transparent);
+      box-shadow: 0 0 16px var(--blue-light);
+      animation: scan 4s ease-in-out infinite alternate;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes stripe {
+      to { transform: translateY(45px); }
+    }
+
+    @keyframes scan {
+      to { top: 82%; }
+    }
+
+    @media (min-width: 900px) {
+      .hero-grid {
+        grid-template-columns: 1.15fr .85fr;
+      }
+
+      .hero-art {
+        width: min(380px, 34vw);
+      }
+
+      .hero-actions .btn {
+        flex: 0 0 auto;
+      }
+    }
+
+    /* Faixa de serviços */
+    .ticker {
+      overflow: hidden;
+      padding-block: 16px;
+      border-block: 1px solid var(--line);
+      background: var(--surface);
+    }
+
+    .ticker-track {
+      display: flex;
+      width: max-content;
+      gap: 40px;
+      animation: marquee 38s linear infinite;
+    }
+
+    .ticker-track span {
+      display: inline-flex;
+      align-items: center;
+      gap: 40px;
+      color: var(--muted);
+      font: 600 .92rem var(--heading);
+      white-space: nowrap;
+    }
+
+    .ticker-track span::after {
+      width: 8px;
+      height: 8px;
+      transform: rotate(45deg);
+      background: var(--blue);
+      content: "";
+    }
+
+    @keyframes marquee {
+      to { transform: translateX(-50%); }
+    }
+
+    /* Serviços */
+    .service-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .service-card {
+      position: relative;
+      display: flex;
+      min-height: 230px;
+      flex-direction: column;
+      gap: 12px;
+      overflow: hidden;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background:
+        radial-gradient(220px circle at var(--mx, -300px) var(--my, -300px), color-mix(in srgb, var(--blue), transparent 80%), transparent 72%),
+        var(--surface);
+      transition: transform .22s ease, border-color .22s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--blue);
+    }
+
+    .service-card p {
+      flex: 1;
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .service-card .btn {
+      align-self: flex-start;
+      min-height: 46px;
+      padding-inline: 18px;
+      font-size: .94rem;
+    }
+
+    @media (min-width: 650px) {
+      .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1000px) {
+      .service-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    /* Montador de mensagem */
+    .message-section {
+      border-block: 1px solid var(--line);
+      background: var(--surface);
+    }
+
+    .two-column {
+      display: grid;
+      gap: 36px;
+    }
+
+    @media (min-width: 900px) {
+      .two-column {
+        grid-template-columns: 1fr 1fr;
+        align-items: start;
+        gap: 64px;
+      }
+    }
+
+    fieldset {
+      min-width: 0;
+      margin: 26px 0 0;
+      padding: 0;
+      border: 0;
+    }
+
+    legend {
+      margin-bottom: 11px;
+      font-weight: 700;
+    }
+
+    .choice-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+    }
+
+    .choice {
+      min-height: 44px;
+      padding: 0 15px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--bg);
+      color: var(--text);
+      cursor: pointer;
+      transition: background .18s ease, border-color .18s ease;
+    }
+
+    .choice:hover {
+      border-color: var(--blue-light);
+    }
+
+    .choice[aria-pressed="true"] {
+      border-color: var(--blue);
+      background: var(--blue);
+    }
+
+    .message-preview {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      background: var(--bg);
+    }
+
+    .message-preview h3 {
+      margin-bottom: 16px;
+      color: var(--blue-light);
+      font-family: var(--body);
+      font-size: 1rem;
+    }
+
+    .message-bubble {
+      min-height: 92px;
+      margin: 0 0 18px;
+      padding: 15px 17px;
+      border-radius: 18px 18px 4px 18px;
+      background: #193a83;
+      overflow-wrap: anywhere;
+    }
+
+    .message-preview .btn {
+      width: 100%;
+    }
+
+    /* Sobre e localização */
+    address {
+      margin: 22px 0;
+      font-style: normal;
+    }
+
+    address strong {
+      display: block;
+      margin-bottom: 8px;
+      font: 600 1.15rem var(--heading);
+    }
+
+    .hours-list {
+      margin: 22px 0 14px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .hours-list li {
+      display: grid;
+      grid-template-columns: 6.3em 1fr;
+      gap: 4px 12px;
+      padding: 12px 10px;
+      border-bottom: 1px solid var(--line);
+      border-radius: 9px;
+    }
+
+    .hours-list li.today {
+      background: var(--surface-2);
+      border-bottom-color: transparent;
+    }
+
+    .hours-list b {
+      font-weight: 700;
+    }
+
+    .hours-list small {
+      grid-column: 2;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .hours-note {
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    /* Chamada final e rodapé */
+    .final-cta {
+      border-top: 1px solid var(--line);
+      background:
+        radial-gradient(ellipse at 50% 0, color-mix(in srgb, var(--blue), transparent 77%), transparent 70%),
+        var(--bg);
+      text-align: center;
+    }
+
+    .final-cta .lead {
+      margin-inline: auto;
+    }
+
+    .final-cta .btn {
+      margin-top: 10px;
+    }
+
+    footer {
+      padding: 44px 0 calc(110px + var(--safe-bottom));
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: .94rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      gap: 26px;
+    }
+
+    footer h2 {
+      margin-bottom: 8px;
+      color: var(--text);
+      font: 700 1rem var(--heading);
+      letter-spacing: -.02em;
+    }
+
+    footer p {
+      margin-bottom: 6px;
+    }
+
+    footer a {
+      color: var(--text);
+    }
+
+    .privacy-note {
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      font-size: .85rem;
+    }
+
+    @media (min-width: 800px) {
+      footer {
+        padding-bottom: 44px;
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .privacy-note {
+        grid-column: 1 / -1;
+      }
+    }
+
+    .floating-wa {
+      position: fixed;
+      z-index: 40;
+      right: 16px;
+      bottom: calc(16px + var(--safe-bottom));
+      width: 58px;
+      min-height: 58px;
+      padding: 0;
+      border-radius: 50%;
+      box-shadow: 0 10px 32px #0008;
+      transition: opacity .2s ease, transform .2s ease;
+    }
+
+    .floating-wa svg {
+      width: 27px;
+      height: 27px;
+    }
+
+    .floating-wa.is-hidden {
+      transform: scale(.82);
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    /* Galeria opcional: aparece quando fotos forem cadastradas */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin: 30px 0;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 4 / 5;
+      padding: 0;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+      cursor: zoom-in;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .35s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.04);
+    }
+
+    .gallery-item span {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      padding: 26px 12px 10px;
+      background: linear-gradient(transparent, #000c);
+      color: #fff;
+      text-align: left;
+      font-size: .88rem;
+    }
+
+    @media (min-width: 700px) {
+      .gallery {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    dialog {
+      width: min(96vw, 1000px);
+      max-width: none;
+      max-height: 94dvh;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--surface);
+      color: var(--text);
+    }
+
+    dialog::backdrop {
+      background: #000e;
+    }
+
+    dialog img {
+      max-width: 100%;
+      max-height: 78dvh;
+      margin-inline: auto;
+      object-fit: contain;
+    }
+
+    dialog p {
+      margin: 12px 0;
+      text-align: center;
+    }
+
+    dialog .btn {
+      display: flex;
+      margin-inline: auto;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+      }
+    }
+
+    @media (hover: none) {
+      .service-card:hover,
+      .gallery-item:hover img {
+        transform: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#inicio" aria-label="Gênesis Barbearia — início">
+        <strong>Gênesis</strong>
+        <span>Barbearia</span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" type="button"
+        aria-expanded="false" aria-controls="mainNav" aria-label="Abrir menu">
+        ☰
+      </button>
+
+      <nav class="nav" id="mainNav" aria-label="Navegação principal">
+        <a href="#servicos">Serviços</a>
+        <a href="#trabalhos" id="galleryNavLink" hidden>Trabalhos</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#localizacao">Localização</a>
+        <a class="btn" data-wa href="https://wa.me/5518981212959" target="_blank" rel="noopener noreferrer">
+          Agendar pelo WhatsApp
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero" id="inicio">
+      <canvas id="heroCanvas" aria-hidden="true"></canvas>
+
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">Araçatuba–SP</div>
+          <div class="status" id="openStatus" aria-live="polite" hidden>
+            <span class="status-dot" aria-hidden="true"></span>
+            <span id="openStatusText"></span>
+          </div>
+
+          <h1>Seu estilo começa com <span class="accent">um bom corte.</span></h1>
+          <p class="lead">
+            Corte, barba e cuidados com o visual na Gênesis Barbearia, em Araçatuba.
+            Fale com a gente e consulte os horários disponíveis.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn" data-wa href="https://wa.me/5518981212959" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.7-3-1.3-4.9-4.3-5-4.5-.2-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.1.1.3 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.7 1.2 1.5 1.9 1 .9 1.9 1.2 2.2 1.3.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.1.1.7-.1 1.4Z"/>
+              </svg>
+              Consultar horários
+            </a>
+            <a class="btn secondary" id="heroGalleryLink" href="#trabalhos" hidden>
+              Ver trabalhos
+            </a>
+          </div>
+
+          <p class="microcopy">A solicitação pelo WhatsApp não confirma uma reserva. O horário é combinado na conversa.</p>
+        </div>
+
+        <div class="hero-art" id="heroArt" aria-hidden="true">
+          <svg class="hero-rings" viewBox="0 0 400 400">
+            <g class="ring-one">
+              <circle cx="200" cy="200" r="188" fill="none" stroke="#d8e0f0" stroke-opacity=".42" stroke-width="3" stroke-dasharray="1 9"/>
+            </g>
+            <g class="ring-two">
+              <circle cx="200" cy="200" r="160" fill="none" stroke="#4778ff" stroke-width="2" stroke-dasharray="80 30 12 30"/>
+            </g>
+            <circle cx="200" cy="200" r="132" fill="none" stroke="#a8c1ff" stroke-opacity=".28"/>
+            <path d="M14 70V14h56M330 14h56v56M386 330v56h-56M70 386H14v-56"
+              fill="none" stroke="#d8e0f0" stroke-width="2"/>
+          </svg>
+          <div class="barber-pole"></div>
+          <span class="scan-line"></span>
+        </div>
+
+        <figure class="hero-photo" id="heroPhoto" hidden></figure>
+      </div>
+    </section>
+
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track" id="tickerTrack">
+        <span>Corte de cabelo e barba</span>
+        <span>Assinatura mensal</span>
+        <span>Limpeza de pele</span>
+        <span>Depilação nasal e de orelha</span>
+        <span>Selagem e alisamento</span>
+        <span>Remoção de cravos</span>
+      </div>
+    </div>
+
+    <section id="trabalhos" hidden>
+      <div class="wrap">
+        <div class="eyebrow">Estilo em cada detalhe</div>
+        <h2>Trabalhos que falam por si</h2>
+        <p class="lead">Confira alguns trabalhos feitos na Gênesis Barbearia. Toque em uma foto para ampliar.</p>
+        <div class="gallery" id="gallery"></div>
+        <p><strong>Gostou de algum estilo?</strong> Envie sua referência pelo WhatsApp.</p>
+        <a class="btn" data-wa="Olá! Vim pelo site da Gênesis Barbearia e gostaria de enviar uma referência de estilo."
+          href="https://wa.me/5518981212959" target="_blank" rel="noopener noreferrer">
+          Enviar referência
+        </a>
+      </div>
+    </section>
+
+    <section id="servicos">
+      <div class="wrap">
+        <div class="eyebrow">Cuidado pessoal</div>
+        <h2>Serviços</h2>
+        <p class="lead">Escolha um serviço para iniciar uma conversa pelo WhatsApp e consultar disponibilidade e condições.</p>
+
+        <div class="service-grid" id="serviceGrid">
+          <article class="service-card">
+            <h3>Corte de cabelo e barba</h3>
+            <p>Cabelo e barba alinhados ao estilo que você procura. Se tiver uma referência, é só enviar.</p>
+            <a class="btn secondary" data-wa="Corte de cabelo e barba" href="https://wa.me/5518981212959" target="_blank" rel="noopener noreferrer">Consultar e agendar</a>
+          </article>
+
+          <article class="service-card">
+            <h3>Assinatura mensal</h3>
+            <p>Consulte pelo WhatsApp as opções disponíveis e as condições da assinatura.</p>
+            <a class="btn secondary" data-wa="Assinatura mensal" href="https://wa.me/5518981212959" target="_blank" rel="noopener noreferrer">Consultar e agendar</a>
+          </article>
+
+          <article class="service-card">
+            <h3>Limpeza de pele</h3>
+            <p>Cuidado com a pele do rosto para completar sua rotina de cuidados pessoais.</p>
+            <a class="btn secondary" data-wa="Limpeza de pele" href="https://wa.me/5518981212959" target="_blank" rel="noopener noreferrer">Consultar e agendar</a>
+          </article>
+
+          <article class="service-card">
+            <h3>Depilação nasal e de orelha</h3>
+            <p>Acabamento nos detalhes para um visual mais cuidado.</p>
+            <a class="btn secondary" data-wa="Depilação nasal e de orelha" href="https://wa.me/5518981212959" target="_blank" rel="noopener noreferrer">Consultar e agendar</a>
+          </article>
+
+          <article class="service-card">
+            <h3>Selagem e alisamento</h3>
+            <p>Converse com a equipe para saber mais sobre esse serviço e as opções disponíveis.</p>
+            <a class="btn secondary" data-wa="Selagem e alisamento" href="https://wa.me/5518981212959" target="_blank" rel="noopener noreferrer">Consultar e agendar</a>
+          </article>
+
+          <article class="service-card">
+            <h3>Remoção de cravos</h3>
+            <p>Atendimento voltado à limpeza e aos cuidados com a pele.</p>
+            <a class="btn secondary" data-wa="Remoção de cravos" href="https://wa.me/5518981212959" target="_blank" rel="noopener noreferrer">Consultar e agendar</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="message-section" id="montarMensagem">
+      <div class="wrap two-column">
+        <div>
+          <div class="eyebrow">Mais prático</div>
+          <h2>Monte sua mensagem</h2>
+          <p class="lead">
+            Selecione os serviços e diga quando prefere. A mensagem fica pronta para você revisar e enviar pelo WhatsApp.
+          </p>
+
+          <fieldset>
+            <legend>Serviços</legend>
+            <div class="choice-list" id="serviceChoices"></div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Quando você prefere?</legend>
+            <div class="choice-list" id="dayChoices"></div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Período</legend>
+            <div class="choice-list" id="periodChoices"></div>
+          </fieldset>
+        </div>
+
+        <div class="message-preview">
+          <h3>Prévia da mensagem</h3>
+          <p class="message-bubble" id="messagePreview" aria-live="polite"></p>
+          <a class="btn" id="sendMessage" href="https://wa.me/5518981212959" target="_blank" rel="noopener noreferrer">
+            Abrir conversa no WhatsApp
+          </a>
+          <p class="microcopy">A mensagem só será enviada quando você tocar no botão do WhatsApp. O horário depende de confirmação.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre">
+      <div class="wrap two-column">
+        <div>
+          <div class="eyebrow">A barbearia</div>
+          <h2>Sobre a Gênesis</h2>
+          <p class="lead">
+            A Gênesis Barbearia é um espaço dedicado ao cuidado pessoal e ao estilo, em Araçatuba.
+          </p>
+          <p class="lead">
+            O atendimento é próximo e direto: você conta o que procura e conversa com a equipe sobre o melhor caminho para o seu visual — do corte e da barba aos cuidados com a pele.
+          </p>
+        </div>
+        <figure class="about-photo" id="aboutPhoto" hidden></figure>
+      </div>
+    </section>
+
+    <section id="localizacao">
+      <div class="wrap two-column">
+        <div>
+          <div class="eyebrow">Estamos em Araçatuba</div>
+          <h2>Localização</h2>
+          <address>
+            <strong>Gênesis Barbearia</strong>
+            Av. 2 de Dezembro, 149<br>
+            Residencial Paquere – II<br>
+            Araçatuba–SP<br>
+            Em frente à rotatória
+          </address>
+          <a class="btn secondary"
+            href="https://www.google.com/maps/dir/?api=1&amp;destination=Av.+2+de+Dezembro%2C+149%2C+Ara%C3%A7atuba+-+SP"
+            target="_blank" rel="noopener noreferrer">
+            Como chegar
+          </a>
+        </div>
+
+        <div>
+          <div class="eyebrow">Planeje sua visita</div>
+          <h2>Horários</h2>
+          <ul class="hours-list" id="hoursList"></ul>
+          <p class="hours-note">Em feriados, confirme o funcionamento pelo WhatsApp.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta" id="agendar">
+      <div class="wrap">
+        <div class="eyebrow">Seu próximo corte começa aqui</div>
+        <h2>Pronto para renovar o visual?</h2>
+        <p class="lead">Fale com a Gênesis Barbearia, tire suas dúvidas e consulte um horário.</p>
+        <a class="btn" data-wa href="https://wa.me/5518981212959" target="_blank" rel="noopener noreferrer">
+          Consultar horários pelo WhatsApp
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-grid">
+      <div>
+        <h2>Gênesis Barbearia</h2>
+        <p>Barbearia em Araçatuba–SP</p>
+        <p>WhatsApp: <a href="tel:+5518981212959">(18) 98121-2959</a></p>
+      </div>
+
+      <div>
+        <h2>Endereço</h2>
+        <p>Av. 2 de Dezembro, 149<br>Residencial Paquere – II<br>Araçatuba–SP</p>
+      </div>
+
+      <div>
+        <h2>Horários</h2>
+        <p>Seg, ter, qua e sex: 08:30–16:00 e 19:00–21:00</p>
+        <p>Qui: 08:30–18:30 e 19:00–21:00</p>
+        <p>Sáb: 08:00–19:00 · Dom: fechado</p>
+      </div>
+
+      <p class="privacy-note">
+        Este site não usa formulários nem envia dados para um servidor. A mensagem montada na página só é encaminhada ao WhatsApp quando você toca no botão. As fontes são carregadas do Google Fonts; o WhatsApp tem sua própria política de privacidade.
+      </p>
+    </div>
+  </footer>
+
+  <a class="btn floating-wa" id="floatingWhatsApp" data-wa
+    href="https://wa.me/5518981212959" target="_blank" rel="noopener noreferrer"
+    aria-label="Consultar horários pelo WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.7-3-1.3-4.9-4.3-5-4.5-.2-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.1.1.3 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.7 1.2 1.5 1.9 1 .9 1.9 1.2 2.2 1.3.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.1.1.7-.1 1.4Z"/>
+    </svg>
+  </a>
+
+  <dialog id="lightbox" aria-label="Imagem ampliada">
+    <img id="lightboxImage" alt="">
+    <p id="lightboxCaption"></p>
+    <button class="btn secondary" id="closeLightbox" type="button">Fechar</button>
+  </dialog>
+
+  <script>
+    "use strict";
+
+    /*
+      PERSONALIZAÇÃO
+      1. Confira o telefone no campo WA.
+      2. Adicione fotos à lista FOTOS para mostrar a galeria.
+      3. Para usar foto na abertura ou na seção Sobre, preencha FOTO_HERO/FOTO_SOBRE.
+      4. Fotos devem ser arquivos próprios e ter texto alternativo descritivo.
+    */
+    const WA = "5518981212959";
+
+    const FOTOS = [
+      // Exemplo:
+      // { src: "imagens/corte-degrade.webp", alt: "Corte degradê feito na barbearia", legenda: "Corte degradê" }
+    ];
+
+    const FOTO_HERO = null;
+    // Exemplo: { src: "imagens/interior.webp", alt: "Interior da Gênesis Barbearia" }
+
+    const FOTO_SOBRE = null;
+    // Exemplo: { src: "imagens/barbearia.webp", alt: "Ambiente da Gênesis Barbearia" }
+
+    const $ = (selector, root = document) => root.querySelector(selector);
+    const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
+
+    const BASE_MESSAGE = "Olá! Vim pelo site da Gênesis Barbearia e gostaria de consultar horários";
+    const whatsappUrl = (message) =>
+      `https://wa.me/${WA}?text=${encodeURIComponent(message)}`;
+
+    // Links de WhatsApp com textos adequados ao contexto.
+    $$("[data-wa]").forEach((link) => {
+      const service = link.dataset.wa;
+      const message = service
+        ? (service.startsWith("Olá") ? service : `${BASE_MESSAGE} para: ${service}.`)
+        : `${BASE_MESSAGE} disponíveis.`;
+
+      link.href = whatsappUrl(message);
+    });
+
+    // Menu móvel: fecha ao escolher um link, tocar fora ou pressionar Escape.
+    const menuToggle = $("#menuToggle");
+    const mainNav = $("#mainNav");
+
+    function closeMenu() {
+      mainNav.classList.remove("is-open");
+      menuToggle.setAttribute("aria-expanded", "false");
+      menuToggle.setAttribute("aria-label", "Abrir menu");
+      menuToggle.textContent = "☰";
+    }
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = mainNav.classList.toggle("is-open");
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.setAttribute("aria-label", isOpen ? "Fechar menu" : "Abrir menu");
+      menuToggle.textContent = isOpen ? "✕" : "☰";
+    });
+
+    mainNav.addEventListener("click", (event) => {
+      if (event.target.closest("a")) closeMenu();
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") closeMenu();
+    });
+
+    document.addEventListener("click", (event) => {
+      if (!mainNav.contains(event.target) && !menuToggle.contains(event.target)) {
+        closeMenu();
+      }
+    });
+
+    // Fotos opcionais.
+    function addPhoto(container, photo, eager = false) {
+      if (!photo || !photo.src) return false;
+
+      const image = new Image();
+      image.src = photo.src;
+      image.alt = photo.alt || "";
+      image.decoding = "async";
+
+      if (!eager) image.loading = "lazy";
+
+      container.appendChild(image);
+      container.hidden = false;
+      return true;
+    }
+
+    if (addPhoto($("#heroPhoto"), FOTO_HERO, true)) {
+      $("#heroArt").hidden = true;
+      $("#heroPhoto").style.width = "100%";
+      $("#heroPhoto").style.maxWidth = "480px";
+      $("#heroPhoto").style.marginInline = "auto";
+      $("#heroPhoto").style.borderRadius = "20px";
+      $("#heroPhoto").style.overflow = "hidden";
+      $("#heroPhoto img").style.width = "100%";
+      $("#heroPhoto img").style.aspectRatio = "4 / 5";
+      $("#heroPhoto img").style.objectFit = "cover";
+    }
+
+    if (addPhoto($("#aboutPhoto"), FOTO_SOBRE)) {
+      $("#aboutPhoto").style.margin = "0";
+      $("#aboutPhoto").style.overflow = "hidden";
+      $("#aboutPhoto").style.borderRadius = "20px";
+      $("#aboutPhoto img").style.width = "100%";
+      $("#aboutPhoto img").style.aspectRatio = "4 / 3";
+      $("#aboutPhoto img").style.objectFit = "cover";
+    }
+
+    if (FOTOS.length > 0) {
+      $("#trabalhos").hidden = false;
+      $("#galleryNavLink").hidden = false;
+      $("#heroGalleryLink").hidden = false;
+
+      const gallery = $("#gallery");
+      const lightbox = $("#lightbox");
+      const lightboxImage = $("#lightboxImage");
+      const lightboxCaption = $("#lightboxCaption");
+
+      FOTOS.forEach((photo) => {
+        if (!photo || !photo.src) return;
+
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "gallery-item";
+        button.setAttribute("aria-label", `Ampliar imagem: ${photo.alt || "trabalho da barbearia"}`);
+
+        const image = new Image();
+        image.src = photo.src;
+        image.alt = photo.alt || "";
+        image.loading = "lazy";
+        image.decoding = "async";
+        button.appendChild(image);
+
+        if (photo.legenda) {
+          const caption = document.createElement("span");
+          caption.textContent = photo.legenda;
+          button.appendChild(caption);
+        }
+
+        button.addEventListener("click", () => {
+          lightboxImage.src = photo.src;
+          lightboxImage.alt = photo.alt || "";
+          lightboxCaption.textContent = photo.legenda || "";
+          lightbox.showModal();
+        });
+
+        gallery.appendChild(button);
+      });
+
+      $("#closeLightbox").addEventListener("click", () => lightbox.close());
+
+      lightbox.addEventListener("click", (event) => {
+        if (event.target === lightbox) lightbox.close();
+      });
+    }
+
+    // Horários locais de Araçatuba, em minutos desde meia-noite.
+    const DAYS = ["Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado"];
+    const HOURS = [
+      [],                                      // Domingo
+      [[510, 960], [1140, 1260]],             // Segunda
+      [[510, 960], [1140, 1260]],             // Terça
+      [[510, 960], [1140, 1260]],             // Quarta
+      [[510, 1110], [1140, 1260]],            // Quinta
+      [[510, 960], [1140, 1260]],             // Sexta
+      [[480, 1140]]                           // Sábado
+    ];
+
+    const formatMinutes = (minutes) =>
+      `${String(Math.floor(minutes / 60)).padStart(2, "0")}:${String(minutes % 60).padStart(2, "0")}`;
+
+    function saoPauloNow() {
+      const parts = new Intl.DateTimeFormat("en-US", {
+        timeZone: "America/Sao_Paulo",
+        weekday: "short",
+        hour: "2-digit",
+        minute: "2-digit",
+        hourCycle: "h23"
+      }).formatToParts(new Date());
+
+      const values = Object.fromEntries(parts.map((part) => [part.type, part.value]));
+      const weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+      return {
+        day: weekdays.indexOf(values.weekday),
+        minutes: Number(values.hour) * 60 + Number(values.minute)
+      };
+    }
+
+    function getOpenStatus() {
+      const { day, minutes } = saoPauloNow();
+      const currentRange = HOURS[day].find(([start, end]) => minutes >= start && minutes < end);
+
+      if (currentRange) {
+        return {
+          isOpen: true,
+          text: `Aberto agora · fecha às ${formatMinutes(currentRange[1])}`
+        };
+      }
+
+      for (let offset = 0; offset < 8; offset += 1) {
+        const nextDay = (day + offset) % 7;
+        const nextRange = HOURS[nextDay].find(([start]) => offset > 0 || start > minutes);
+
+        if (nextRange) {
+          const dayLabel = offset === 0
+            ? "hoje"
+            : offset === 1
+              ? "amanhã"
+              : DAYS[nextDay].toLowerCase();
+
+          return {
+            isOpen: false,
+            text: `Fechado agora · abre ${dayLabel} às ${formatMinutes(nextRange[0])}`
+          };
+        }
+      }
+
+      return { isOpen: false, text: "Consulte os próximos horários pelo WhatsApp." };
+    }
+
+    function renderHours() {
+      const { day, minutes } = saoPauloNow();
+      const list = $("#hoursList");
+      list.replaceChildren();
+
+      HOURS.forEach((ranges, index) => {
+        const item = document.createElement("li");
+        if (index === day) item.classList.add("today");
+
+        const dayName = document.createElement("b");
+        dayName.textContent = DAYS[index];
+
+        const times = document.createElement("small");
+        times.textContent = ranges.length
+          ? ranges.map(([start, end]) => `${formatMinutes(start)}–${formatMinutes(end)}`).join(" e ")
+          : "Fechado";
+
+        item.append(dayName, document.createElement("span"), times);
+        list.appendChild(item);
+
+        // Marcador textual acessível para o dia atual.
+        if (index === day) {
+          dayName.setAttribute("aria-label", `${DAYS[index]}, hoje`);
+        }
+      });
+
+      const status = getOpenStatus();
+      $("#openStatus").hidden = false;
+      $("#openStatus").classList.toggle("is-open", status.isOpen);
+      $("#openStatusText").textContent = status.text;
+    }
+
+    renderHours();
+    window.setInterval(renderHours, 60_000);
+
+    // Montador de mensagem para WhatsApp.
+    const selection = {
+      services: new Set(),
+      day: "",
+      period: ""
+    };
+
+    function addChoices(container, options, mode, key) {
+      const root = $(container);
+
+      options.forEach(([label, value]) => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "choice";
+        button.textContent = label;
+        button.setAttribute("aria-pressed", "false");
+
+        button.addEventListener("click", () => {
+          const selected = button.getAttribute("aria-pressed") === "true";
+
+          if (mode === "multiple") {
+            if (selected) selection.services.delete(value);
+            else selection.services.add(value);
+            button.setAttribute("aria-pressed", String(!selected));
+          } else {
+            root.querySelectorAll("button").forEach((other) => {
+              other.setAttribute("aria-pressed", "false");
+            });
+
+            selection[key] = selected ? "" : value;
+            button.setAttribute("aria-pressed", String(!selected));
+          }
+
+          updateMessage();
+        });
+
+        root.appendChild(button);
+      });
+    }
+
+    function updateMessage() {
+      const services = [...selection.services];
+      const preferences = [selection.day, selection.period].filter(Boolean);
+
+      let message = services.length
+        ? `${BASE_MESSAGE} para: ${services.join(", ")}.`
+        : `${BASE_MESSAGE} disponíveis.`;
+
+      if (preferences.length) {
+        message += ` Minha preferência: ${preferences.join(", ")}.`;
+      }
+
+      $("#messagePreview").textContent = message;
+      $("#sendMessage").href = whatsappUrl(message);
+    }
+
+    addChoices(
+      "#serviceChoices",
+      $$(".service-card h3").map((heading) => [heading.textContent, heading.textContent]),
+      "multiple"
+    );
+
+    addChoices(
+      "#dayChoices",
+      [["Hoje", "hoje"], ["Amanhã", "amanhã"], ["Esta semana", "esta semana"]],
+      "single",
+      "day"
+    );
+
+    addChoices(
+      "#periodChoices",
+      [["Manhã", "de manhã"], ["Tarde", "à tarde"], ["Noite", "à noite"]],
+      "single",
+      "period"
+    );
+
+    updateMessage();
+
+    // Faixa contínua sem depender de conteúdo duplicado no HTML.
+    const ticker = $("#tickerTrack");
+    ticker.insertAdjacentHTML("beforeend", ticker.innerHTML);
+
+    // Efeito sutil nos cartões: limitado a dispositivos com ponteiro preciso.
+    const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+
+    if (finePointer) {
+      $("#serviceGrid").addEventListener("pointermove", (event) => {
+        const card = event.target.closest(".service-card");
+        if (!card) return;
+
+        const rect = card.getBoundingClientRect();
+        card.style.setProperty("--mx", `${event.clientX - rect.left}px`);
+        card.style.setProperty("--my", `${event.clientY - rect.top}px`);
+      });
+    }
+
+    // Progresso de leitura sem animação contínua.
+    let scrollQueued = false;
+
+    function updateScrollProgress() {
+      const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = scrollable > 0 ? window.scrollY / scrollable : 0;
+      document.documentElement.style.setProperty("--scroll-progress", String(progress));
+      scrollQueued = false;
+    }
+
+    window.addEventListener("scroll", () => {
+      if (!scrollQueued) {
+        window.requestAnimationFrame(updateScrollProgress);
+        scrollQueued = true;
+      }
+    }, { passive: true });
+
+    updateScrollProgress();
+
+    // Canvas decorativo: respeita movimento reduzido, visibilidade e economia de recursos.
+    const canvas = $("#heroCanvas");
+    const context = canvas.getContext("2d", { alpha: true });
+    const hero = $(".hero");
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const lowPower = window.matchMedia("(max-width: 600px)");
+    let width = 0;
+    let height = 0;
+    let particles = [];
+    let pointer = { x: -1000, y: -1000 };
+    let animationFrame = 0;
+    let visible = true;
+
+    function resizeCanvas() {
+      const rect = hero.getBoundingClientRect();
+      const ratio = Math.min(window.devicePixelRatio || 1, 2);
+
+      width = rect.width;
+      height = rect.height;
+      canvas.width = Math.round(width * ratio);
+      canvas.height = Math.round(height * ratio);
+      context.setTransform(ratio, 0, 0, ratio, 0, 0);
+
+      const count = Math.min(lowPower.matches ? 24 : 58, Math.floor(width / 20));
+      particles = Array.from({ length: count }, () => ({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        vx: (Math.random() - 0.5) * 0.28,
+        vy: (Math.random() - 0.5) * 0.28
+      }));
+
+      drawCanvas();
+    }
+
+    function drawCanvas() {
+      if (!context) return;
+
+      context.clearRect(0, 0, width, height);
+
+      particles.forEach((particle, index) => {
+        if (!reducedMotion.matches) {
+          particle.x += particle.vx;
+          particle.y += particle.vy;
+
+          if (particle.x < 0 || particle.x > width) particle.vx *= -1;
+          if (particle.y < 0 || particle.y > height) particle.vy *= -1;
+        }
+
+        context.fillStyle = "rgba(168,193,255,.65)";
+        context.fillRect(particle.x - 1, particle.y - 1, 2, 2);
+
+        for (let next = index + 1; next < particles.length; next += 1) {
+          const other = particles[next];
+          const distance = Math.hypot(particle.x - other.x, particle.y - other.y);
+
+          if (distance < 105) {
+            context.strokeStyle = `rgba(71,120,255,${(1 - distance / 105) * 0.28})`;
+            context.beginPath();
+            context.moveTo(particle.x, particle.y);
+            context.lineTo(other.x, other.y);
+            context.stroke();
+          }
+        }
+
+        const pointerDistance = Math.hypot(particle.x - pointer.x, particle.y - pointer.y);
+        if (pointerDistance < 145) {
+          context.strokeStyle = `rgba(168,193,255,${(1 - pointerDistance / 145) * 0.3})`;
+          context.beginPath();
+          context.moveTo(particle.x, particle.y);
+          context.lineTo(pointer.x, pointer.y);
+          context.stroke();
+        }
+      });
+    }
+
+    function animateCanvas() {
+      animationFrame = 0;
+      if (!visible || reducedMotion.matches) return;
+
+      drawCanvas();
+      animationFrame = window.requestAnimationFrame(animateCanvas);
+    }
+
+    function startCanvas() {
+      if (!animationFrame && visible && !reducedMotion.matches) {
+        animationFrame = window.requestAnimationFrame(animateCanvas);
+      }
+    }
+
+    function stopCanvas() {
+      if (animationFrame) {
+        window.cancelAnimationFrame(animationFrame);
+        animationFrame = 0;
+      }
+    }
+
+    if (context) {
+      resizeCanvas();
+
+      if ("ResizeObserver" in window) {
+        const resizeObserver = new ResizeObserver(resizeCanvas);
+        resizeObserver.observe(hero);
+      } else {
+        window.addEventListener("resize", resizeCanvas, { passive: true });
+      }
+
+      hero.addEventListener("pointermove", (event) => {
+        const rect = hero.getBoundingClientRect();
+        pointer = { x: event.clientX - rect.left, y: event.clientY - rect.top };
+      });
+
+      hero.addEventListener("pointerleave", () => {
+        pointer = { x: -1000, y: -1000 };
+      });
+
+      if ("IntersectionObserver" in window) {
+        const heroObserver = new IntersectionObserver(([entry]) => {
+          visible = entry.isIntersecting;
+          if (visible) startCanvas();
+          else stopCanvas();
+        });
+
+        heroObserver.observe(hero);
+      }
+
+      reducedMotion.addEventListener?.("change", () => {
+        if (reducedMotion.matches) {
+          stopCanvas();
+          drawCanvas();
+        } else {
+          startCanvas();
+        }
+      });
+
+      startCanvas();
+    }
+
+    // Esconde o botão flutuante quando já há uma chamada para ação à vista.
+    const floatingButton = $("#floatingWhatsApp");
+    const callToActionTargets = $$(".hero-actions, #agendar, #sendMessage, footer");
+
+    if ("IntersectionObserver" in window) {
+      const visibleTargets = new Set();
+
+      const ctaObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) visibleTargets.add(entry.target);
+          else visibleTargets.delete(entry.target);
+        });
+
+        floatingButton.classList.toggle("is-hidden", visibleTargets.size > 0);
+      }, { threshold: 0.15 });
+
+      callToActionTargets.forEach((element) => ctaObserver.observe(element));
+    }
+  </script>
 </body>
 </html>
