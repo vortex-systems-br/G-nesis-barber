@@ -3,10 +3,10 @@ import path from "path";
 
 const nextConfig: NextConfig = {
   turbopack: {
-    root: path.resolve(__dirname), // raiz = pasta do projeto
+    root: path.resolve(__dirname),
   },
   async headers() {
-    // Só em produção: em dev, "immutable" fazia o browser guardar frames antigos
+    // SÃ³ em produÃ§Ã£o: em dev, "immutable" fazia o browser guardar frames antigos
     if (process.env.NODE_ENV !== "production") return [];
 
     return [

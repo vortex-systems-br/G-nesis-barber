@@ -3,17 +3,22 @@
 import { useEffect, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
-// Tem de ser igual ao nº de ficheiros em /public/frames (001.webp … 129.webp)
+// Tem de ser igual ao nº de ficheiros em /public/frames-v2 (001.webp … 129.webp)
 const TOTAL_FRAMES = 129;
-const FRAMES_DIR = "/frames-v2"; // se mudares para /frames-v2, muda também no next.config.ts
+const FRAMES_DIR = "/frames-v2"; // tem de bater com o `source` do next.config.ts
 const frameUrl = (n: number) => `${FRAMES_DIR}/${String(n).padStart(3, "0")}.webp`; // n: 1-based
 
 const WINDOW = 12;     // frames decodificados em RAM de cada lado do atual
 const CONCURRENCY = 4; // downloads simultâneos
 
 // Enquadramento: igual na <img> (poster) e no <canvas>, senão desalinham
+// 1º valor = horizontal (menor = mais à esquerda), 2º = vertical (0% = topo)
 const MEDIA_CLASS =
-  "h-full w-full object-cover object-[28%_0%] md:object-[center_0%]";
+  "h-full w-full object-cover object-[45%_0%] md:object-[center_0%]";
+
+// Painéis de texto: em baixo no mobile (cara livre), centrados no PC
+const PANEL_CLASS =
+  "pointer-events-none absolute inset-0 flex flex-col items-center justify-end px-6 pb-28 text-center md:justify-center md:pb-0";
 
 export default function HeroScroll() {
   const containerRef = useRef<HTMLElement>(null);
@@ -30,6 +35,20 @@ export default function HeroScroll() {
   // invisível => não clicável nem focável
   const text3Visibility = useTransform(text3Opacity, (o) => (o > 0.05 ? "visible" : "hidden"));
 
+  // Mede a altura real do cabeçalho e publica em --header-h
+  useEffect(() => {
+    const header = document.querySelector("header");
+    if (!header) return;
+    const root = document.documentElement;
+    const apply = () =>
+      root.style.setProperty("--header-h", `${header.getBoundingClientRect().height}px`);
+    apply();
+    const ro = new ResizeObserver(apply);
+    ro.observe(header);
+    return () => ro.disconnect();
+  }, []);
+
+  // Sequência de frames
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -46,7 +65,7 @@ export default function HeroScroll() {
     const last = count - 1;
 
     const abort = new AbortController();
-    const blobs: (Blob | undefined)[] = new Array(count); // comprimidos (~poucos MB)
+    const blobs: (Blob | undefined)[] = new Array(count); // comprimidos
     const bitmaps = new Map<number, ImageBitmap>();        // decodificados (só a janela)
     const decoding = new Set<number>();
     const requested = new Set<number>();
@@ -181,10 +200,9 @@ export default function HeroScroll() {
 
   return (
     <section ref={containerRef} className="hero-scroll relative h-[400svh]">
-      {/* imagem em lvh: sem faixa vazia quando a barra do Safari colapsa */}
-      <div className="sticky top-0 h-[100lvh] w-full overflow-hidden bg-zinc-950">
-        {/* Área da imagem: começa abaixo do cabeçalho (top-20 = 5rem) */}
-        <div className="absolute inset-x-0 bottom-0 top-20">
+      {/* Fica colado por baixo do cabeçalho; altura em lvh evita faixa vazia no Safari */}
+      <div className="sticky top-[var(--header-h)] h-[calc(100lvh-var(--header-h))] w-full overflow-hidden bg-zinc-950">
+        <div className="absolute inset-0">
           {/* Poster (SSR): LCP, primeiro paint e fallback de reduced-motion */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
@@ -204,11 +222,8 @@ export default function HeroScroll() {
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-zinc-950/70 via-zinc-950/30 to-zinc-950/95" />
 
         {/* texto em svh: centrado na área realmente visível */}
-        <div className="absolute inset-x-0 top-0 h-[100svh]">
-          <motion.div
-            style={{ opacity: text1Opacity }}
-            className="hero-panel-1 pointer-events-none absolute inset-0 flex flex-col items-center justify-center px-6 text-center"
-          >
+        <div className="absolute inset-x-0 top-0 h-[calc(100svh-var(--header-h))]">
+          <motion.div style={{ opacity: text1Opacity }} className={`hero-panel-1 ${PANEL_CLASS}`}>
             <span className="mb-4 text-sm font-bold uppercase tracking-widest text-amber-500">
               A Experiência
             </span>
@@ -217,10 +232,7 @@ export default function HeroScroll() {
             </h2>
           </motion.div>
 
-          <motion.div
-            style={{ opacity: text2Opacity }}
-            className="hero-panel-2 pointer-events-none absolute inset-0 flex flex-col items-center justify-center px-6 text-center"
-          >
+          <motion.div style={{ opacity: text2Opacity }} className={`hero-panel-2 ${PANEL_CLASS}`}>
             <h2 className="font-display text-4xl font-bold uppercase tracking-tight text-zinc-50 drop-shadow-2xl md:text-6xl">
               Sem enrolação.
               <br />
@@ -230,7 +242,7 @@ export default function HeroScroll() {
 
           <motion.div
             style={{ opacity: text3Opacity, visibility: text3Visibility }}
-            className="hero-panel-3 pointer-events-none absolute inset-0 flex flex-col items-center justify-center px-6 text-center"
+            className={`hero-panel-3 ${PANEL_CLASS}`}
           >
             <h2 className="mb-8 font-display text-4xl font-bold uppercase tracking-tight text-zinc-50 drop-shadow-xl md:text-7xl">
               Pronto para a transformação?

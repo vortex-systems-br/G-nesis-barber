@@ -5,6 +5,11 @@
   --font-display: var(--font-oswald), ui-sans-serif, system-ui, sans-serif;
 }
 
+/* Altura do cabeçalho: valor de reserva. O HeroScroll mede o real e substitui-o */
+:root {
+  --header-h: 5.25rem;
+}
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 5rem;
@@ -55,7 +60,7 @@ html[data-bg="paused"] .fb * { animation-play-state: paused; }
 /* Reduced motion: fundo congelado e hero estático */
 @media (prefers-reduced-motion: reduce) {
   .fb * { animation-play-state: paused; }
-  .hero-scroll { height: 100svh !important; }
+  .hero-scroll { height: calc(100svh - var(--header-h)) !important; }
   .hero-panel-1, .hero-panel-2 { display: none !important; }
   .hero-panel-3 { opacity: 1 !important; visibility: visible !important; }
 }
