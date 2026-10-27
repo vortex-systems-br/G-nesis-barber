@@ -1,6 +1,8 @@
 ﻿import SplashScreen from "@/components/SplashScreen";
 import Header from "@/components/Header";
-import Hero from "@/components/Hero";
+// Removemos o antigo import do Hero
+// import Hero from "@/components/Hero"; 
+import HeroScroll from "@/components/HeroScroll"; // Importamos o novo
 import ServiceMenu from "@/components/ServiceMenu";
 import InfoSection from "@/components/InfoSection";
 import Footer from "@/components/Footer";
@@ -11,7 +13,9 @@ export default function Home() {
       <SplashScreen />
       <Header />
       <main className="flex-1">
-        <Hero />
+        {/* A nova experiência controlada por scroll entra aqui */}
+        <HeroScroll /> 
+        
         <ServiceMenu />
         <InfoSection />
       </main>
