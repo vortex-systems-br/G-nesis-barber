@@ -7,17 +7,14 @@ import Image from "next/image";
 export default function HeroScroll() {
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // Lê o progresso do scroll de 0 (topo) a 1 (fim da secção)
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end end"],
   });
 
-  // Animações de Parallax e Zoom amarradas ao Scroll
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.35]); // Zoom in suave
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "15%"]); // Movimento para baixo
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.25]); // Zoom um pouco mais suave
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "10%"]); 
 
-  // Opacidade da Tipografia (aparece e desaparece como num filme)
   const text1Opacity = useTransform(scrollYProgress, [0, 0.15, 0.25], [1, 1, 0]);
   const text2Opacity = useTransform(scrollYProgress, [0.25, 0.4, 0.55], [0, 1, 0]);
   const text3Opacity = useTransform(scrollYProgress, [0.55, 0.7, 1], [0, 1, 1]);
@@ -25,10 +22,8 @@ export default function HeroScroll() {
   return (
     <section ref={containerRef} className="relative h-[400vh] bg-zinc-950">
       
-      {/* Container "Sticky": Fica preso no ecrã enquanto a secção dura */}
       <div className="sticky top-0 h-screen w-full overflow-hidden bg-zinc-950">
         
-        {/* A imagem animada pelo SCROLL com o caminho corrigido */}
         <motion.div
           style={{ scale, y }}
           className="absolute inset-0 w-full h-full origin-center"
@@ -37,13 +32,14 @@ export default function HeroScroll() {
             src="/images/hero-barbearia.png"
             alt="Gênesis Barbearia - Corte de Cabelo"
             fill
-            className="object-cover object-center grayscale contrast-125 brightness-75"
+            // Removemos os filtros de cor, deixamos a imagem original brilhar
+            className="object-cover object-center"
             priority
           />
         </motion.div>
 
-        {/* Camada escura por cima da imagem para dar destaque aos textos */}
-        <div className="absolute inset-0 bg-gradient-to-b from-zinc-950/80 via-zinc-950/50 to-zinc-950/95" />
+        {/* Gradiente muito mais leve: apenas escurece o topo (Header) e a base, deixando o meio visível */}
+        <div className="absolute inset-0 bg-gradient-to-b from-zinc-950/80 via-zinc-950/20 to-zinc-950/95" />
 
         {/* --- NARRATIVA 1 --- */}
         <motion.div
@@ -53,7 +49,7 @@ export default function HeroScroll() {
           <span className="text-amber-500 font-bold uppercase tracking-widest text-sm mb-4">
             A Experiência
           </span>
-          <h2 className="text-5xl md:text-7xl font-display font-bold uppercase text-zinc-50 tracking-tight">
+          <h2 className="text-5xl md:text-7xl font-display font-bold uppercase text-zinc-50 tracking-tight drop-shadow-lg">
             Onde o estilo encontra a <span className="text-amber-500">precisão</span>
           </h2>
         </motion.div>
@@ -73,10 +69,10 @@ export default function HeroScroll() {
           style={{ opacity: text3Opacity }}
           className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center pointer-events-none"
         >
-          <h2 className="text-5xl md:text-7xl font-display font-bold uppercase text-zinc-50 tracking-tight mb-8">
+          <h2 className="text-5xl md:text-7xl font-display font-bold uppercase text-zinc-50 tracking-tight mb-8 drop-shadow-xl">
             Pronto para a transformação?
           </h2>
-          <div className="inline-block border border-amber-500 bg-zinc-950/50 backdrop-blur-sm text-amber-500 font-bold uppercase tracking-wider text-sm px-10 py-5">
+          <div className="inline-block border border-amber-500 bg-zinc-950/70 backdrop-blur-md text-amber-500 font-bold uppercase tracking-wider text-sm px-10 py-5 pointer-events-auto cursor-pointer hover:bg-amber-500 hover:text-zinc-950 transition-colors duration-300">
             Continue a descer
           </div>
         </motion.div>
