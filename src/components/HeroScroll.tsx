@@ -12,8 +12,15 @@ export default function HeroScroll() {
     offset: ["start start", "end end"],
   });
 
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.25]); // Zoom um pouco mais suave
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "10%"]); 
+  // A MAGIA DO CINEMA (Efeito Ken Burns de 3 Fases):
+  // 1. Escala: Vai de 1 (normal) -> 1.35 (zoom) -> 1.45 (zoom final)
+  const scale = useTransform(scrollYProgress, [0, 0.4, 1], [1, 1.35, 1.45]);
+  
+  // 2. Eixo X (Horizontal): Vai do Centro (0%) -> Direita (6%, o que empurra a vista para a ESQUERDA) -> Esquerda (-6%)
+  const x = useTransform(scrollYProgress, [0, 0.4, 1], ["0%", "6%", "-6%"]);
+  
+  // 3. Eixo Y (Vertical): Vai do Centro (0%) -> Baixo (12%, empurra a vista para o ROSTO em CIMA) -> Cima (-10%, foca nas MÃOS/TESOURA em baixo)
+  const y = useTransform(scrollYProgress, [0, 0.4, 1], ["0%", "12%", "-10%"]); 
 
   const text1Opacity = useTransform(scrollYProgress, [0, 0.15, 0.25], [1, 1, 0]);
   const text2Opacity = useTransform(scrollYProgress, [0.25, 0.4, 0.55], [0, 1, 0]);
@@ -24,21 +31,20 @@ export default function HeroScroll() {
       
       <div className="sticky top-0 h-screen w-full overflow-hidden bg-zinc-950">
         
+        {/* Adicionámos o 'x' e o 'y' à animação */}
         <motion.div
-          style={{ scale, y }}
+          style={{ scale, x, y }}
           className="absolute inset-0 w-full h-full origin-center"
         >
           <Image
             src="/images/hero-barbearia.png"
             alt="Gênesis Barbearia - Corte de Cabelo"
             fill
-            // Removemos os filtros de cor, deixamos a imagem original brilhar
             className="object-cover object-center"
             priority
           />
         </motion.div>
 
-        {/* Gradiente muito mais leve: apenas escurece o topo (Header) e a base, deixando o meio visível */}
         <div className="absolute inset-0 bg-gradient-to-b from-zinc-950/80 via-zinc-950/20 to-zinc-950/95" />
 
         {/* --- NARRATIVA 1 --- */}
