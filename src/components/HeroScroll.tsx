@@ -28,13 +28,13 @@ export default function HeroScroll() {
       {/* Container "Sticky": Fica preso no ecrã enquanto a secção dura */}
       <div className="sticky top-0 h-screen w-full overflow-hidden bg-zinc-950">
         
-        {/* A imagem animada pelo SCROLL */}
+        {/* A imagem animada pelo SCROLL com o caminho corrigido */}
         <motion.div
           style={{ scale, y }}
           className="absolute inset-0 w-full h-full origin-center"
         >
           <Image
-            src="/hero-barbearia.png"
+            src="/images/hero-barbearia.png"
             alt="Gênesis Barbearia - Corte de Cabelo"
             fill
             className="object-cover object-center grayscale contrast-125 brightness-75"
