@@ -5,7 +5,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 
 // Tem de ser igual ao nº de ficheiros em /public/frames (001.webp … 129.webp)
 const TOTAL_FRAMES = 129;
-const FRAMES_DIR = "/frames"; // se mudares para /frames-v2, muda também no next.config.ts
+const FRAMES_DIR = "/frames-v2"; // se mudares para /frames-v2, muda também no next.config.ts
 const frameUrl = (n: number) => `${FRAMES_DIR}/${String(n).padStart(3, "0")}.webp`; // n: 1-based
 
 const WINDOW = 12;     // frames decodificados em RAM de cada lado do atual
