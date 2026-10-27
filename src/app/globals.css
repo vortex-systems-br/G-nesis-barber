@@ -14,3 +14,48 @@ body {
   background-color: #09090b;
   color: #fafafa;
 }
+
+/* --- FUNDO FLUTUANTE (FLOATING BACKGROUND) --- */
+.fb {
+  --size: 3rem;
+  --k: 1; /* multiplicador de duração: <1 = mais rápido */
+  container-type: inline-size; /* cqw = largura deste contentor, sem scrollbar */
+}
+@media (max-width: 640px) { .fb { --k: 0.5; } }
+
+.fb-x, .fb-y, .fb-spin {
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.fb-x {
+  animation-name: fb-x; animation-direction: alternate;
+  animation-duration: calc(var(--dx) * var(--k));
+  animation-delay: calc(var(--ox) * var(--k));
+}
+.fb-y {
+  animation-name: fb-y; animation-direction: alternate;
+  animation-duration: calc(var(--dy) * var(--k));
+  animation-delay: calc(var(--oy) * var(--k));
+}
+.fb-spin {
+  animation-name: fb-spin;
+  animation-duration: var(--dr);
+  animation-delay: var(--or);
+  width: var(--size); height: var(--size);
+}
+
+@keyframes fb-x    { from { transform: translateX(0) } to { transform: translateX(calc(100cqw - var(--size))) } }
+@keyframes fb-y    { from { transform: translateY(0) } to { transform: translateY(calc(100svh - var(--size))) } }
+@keyframes fb-spin { from { transform: rotate(0) }     to { transform: rotate(360deg) } }
+
+/* Pausa do utilizador (WCAG 2.2.2) e pausa automática sob o hero */
+html[data-motion="paused"] .fb *,
+html[data-bg="paused"] .fb * { animation-play-state: paused; }
+
+/* Reduced motion: fundo congelado e hero estático */
+@media (prefers-reduced-motion: reduce) {
+  .fb * { animation-play-state: paused; }
+  .hero-scroll { height: 100svh !important; }
+  .hero-panel-1, .hero-panel-2 { display: none !important; }
+  .hero-panel-3 { opacity: 1 !important; visibility: visible !important; }
+}
